@@ -1,9 +1,10 @@
 import { Router } from "express";
+import { signUp } from "../controllers/users.js";
 
 const router = Router();
 
 // Sign Up : POST
-router.post("/sign-up");
+router.post("/sign-up", signUp);
 // Sign In : POST
 router.post("/sign-in");
 // Verify : GET
