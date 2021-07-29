@@ -6,7 +6,6 @@ import SignUp from "./views/SignUp/SignUp";
 import SignIn from "./views/SignIn/SignIn";
 import { verify } from "./services/users";
 import NewTodo from "./views/NewTodo/NewTodo";
-import { Switch } from "react-router-dom";
 
 function App() {
   const [user, setUser] = useState(null);
