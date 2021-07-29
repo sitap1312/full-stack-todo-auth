@@ -6,6 +6,7 @@ import { useHistory } from "react-router";
 export default function NewTodo(props) {
   const [input, setInput] = useState({ name: "", due_date: "", complete: "" });
   const history = useHistory();
+
   const handleChange = (e) => {
     const { id, value } = e.target;
 
