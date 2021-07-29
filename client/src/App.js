@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       {/* route all todos */}
       <Route exact path="/">
-        <Home user={user} />
+        <Home user={user} setUser={setUser} />
       </Route>
       {/* route a single todo */}
       {/* route create todo */}
