@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Nav() {
-  return <div>Nav</div>;
+export default function Nav(props) {
+  return <div>Nav {props.user?.username}</div>;
 }

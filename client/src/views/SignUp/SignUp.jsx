@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { signUp } from "../../services/users";
+import Layout from "../../components/Layout/Layout";
+import { useHistory } from "react-router-dom";
 
-export default function SignUp() {
+export default function SignUp(props) {
   const [input, setInput] = useState({ username: "", email: "", password: "" });
+  // const { setUser } = props;
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await signUp(input);
     console.log(user);
+    props.setUser(user);
+    history.push("/");
   };
 
   const handleInput = (e) => {
@@ -18,7 +24,7 @@ export default function SignUp() {
     }));
   };
   return (
-    <div>
+    <Layout>
       SignUp
       <form onSubmit={handleSubmit}>
         <label>Username</label>
@@ -50,6 +56,6 @@ export default function SignUp() {
         <br />
         <button>Sign Up</button>
       </form>
-    </div>
+    </Layout>
   );
 }
